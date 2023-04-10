@@ -227,6 +227,6 @@ This code creates a new instance of the ContractKit class and retrieves data fro
 
 Congratulations you have successfully integrated celo to your mobile app using the `Celo SDK`. You can now interact with you app perfecttly.  
 
-#Conclusion
+# Conclusion
 
 Using the **Celo Wallet SDK** to integrate Celo with a mobile application is a simple process that can add powerful functionality to your application. You will be able to set up the **Celo Wallet SDK**, authenticate users, send transactions, check account balances, and interact with smart contracts on the Celo network by following the steps outlined in this tutorial. You'll be well on your way to developing powerful Celo-powered mobile applications with these tools at your disposal.
