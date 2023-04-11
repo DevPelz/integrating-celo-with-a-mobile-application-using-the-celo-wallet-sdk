@@ -84,10 +84,11 @@ Installing the **Celo Wallet SDK** is the first step in integrating Celo with yo
 Once you've installed the Celo Wallet SDK, you'll need to connect to the Celo network. This can be done using the following code:
 
 ``` javascript
-import { CeloWallet } from '@celo/walletkit';
+import { CeloWallet } from '@celo/walletkit'; // Import CeloWallet from '@celo/walletkit' library
 
-const celoWallet = new CeloWallet();
-celoWallet.connect();
+const celoWallet = new CeloWallet(provider); // Create a new instance of CeloWallet with a provider argument
+
+celoWallet.connect(); // Call the connect() method to connect to the blockchain network
 ```
 This code creates a new CeloWallet instance and connects it to the Celo network.
 
@@ -96,8 +97,10 @@ This code creates a new CeloWallet instance and connects it to the Celo network.
 The user will need to authenticate their identity using the Celo Wallet SDK before they can interact with the Celo network via your mobile application. This can be accomplished with the following code:
 
 ```javascript
-const auth = await celoWallet.authenticate();
-console.log(auth);
+const auth = await celoWallet.authenticate(); // Call the authenticate() method on the celoWallet instance and await the result
+
+console.log(auth); // Output the result of the authentication to the console
+
 ```
 This code opens the Celo Wallet app and prompts the user to authenticate their identity. Once the user has authenticated, the code logs an authentication object to the console.
 
@@ -114,13 +117,14 @@ const recipientAddress = '<recipient address>';
 const amountToSend = 1; // cGLD
 
 const txObject = {
-  from: celoWallet.address,
-  to: recipientAddress,
-  value: celoWallet.web3.utils.toWei(amountToSend.toString(), 'ether'),
+  from: celoWallet.address, // Specify the sender's address as the 'from' field
+  to: recipientAddress, // Specify the recipient's address as the 'to' field
+  value: Web3.utils.toWei(amountToSend.toString(), 'ether'), // Convert the amount to send to wei using the web3 object's toWei() method
 };
 
-const txHash = await celoWallet.sendTransaction(txObject);
-console.log(txHash);
+const txHash = await celoWallet.sendTransaction(txObject); // Send the transaction using the celoWallet's sendTransaction() method and await the transaction hash
+console.log(txHash); // Output the transaction hash to the console
+
 ```
 This code sends 1 (one) cGLD to the specified recipient address while also logging the transaction hash to the console.
 
@@ -129,8 +133,10 @@ This code sends 1 (one) cGLD to the specified recipient address while also loggi
 To check the balance of your Celo account, you can use the following code:
 
 ```javascript
-const balance = await celoWallet.getBalance();
-console.log(balance);
+const balance = await celoWallet.getBalance(); // Call the getBalance() method on the celoWallet instance and await the balance result
+
+console.log(balance); // Output the balance to the console
+
 ```
 This code retrieves your Celo account balance and logs it to the console.
 
@@ -139,15 +145,18 @@ This code retrieves your Celo account balance and logs it to the console.
 To read data from a Celo network smart contract, use the following code:
 
 ```javascript
-import { ContractKit } from '@celo/contractkit';
+import { ContractKit } from '@celo/contractkit'; // Import the ContractKit from the '@celo/contractkit' library
 
-const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org');
-const contractAddress = '<contract address>';
-const contract = new kit.web3.eth.Contract(contractABI, contractAddress);
+const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org'); // Create a new ContractKit instance with the specified Celo network URL
 
-const result = await contract.methods.<method name>(<arguments>).call();
-console.log(result);
+const contractAddress = '<contract address>'; // Specify the address of the contract to interact with
+const contract = new kit.web3.eth.Contract(contractABI, contractAddress); // Create a new Contract instance using the ContractKit's web3 object, contract ABI, and contract address
+
+const result = await contract.methods.<method name>(<arguments>).call(); // Call a contract method using the contract's methods object, providing the method name and any required arguments, and use the call() method to invoke the contract method and get the result
+
+console.log(result); // Output the result of the contract method call to the console
 ```
+
 This code creates a new instance of the ContractKit class and retrieves data from the specified smart contract using the contract's ABI and address.
 
 # Part 3: Implementing Celo Functionality in Your Mobile Application-
@@ -159,10 +168,12 @@ Now that you have understood the fundamentals of the Celo Wallet SDK and how to 
 The first step in integrating Celo with your mobile application is to import the Celo Wallet SDK and set up a connection to the Celo network. This can be done using the following code:
 
 ```javascript
-import { CeloWallet } from '@celo/walletkit';
+import { CeloWallet } from '@celo/walletkit'; // Import the CeloWallet class from the '@celo/walletkit' library
 
-const celoWallet = new CeloWallet();
-celoWallet.connect();
+const celoWallet = new CeloWallet(); // Create a new instance of the CeloWallet class
+
+celoWallet.connect(); // Call the connect() method on the celoWallet instance to connect to the Celo network
+
 ```
 
 This code creates a new instance of the CeloWallet class and connects it to the Celo network.
@@ -172,8 +183,10 @@ This code creates a new instance of the CeloWallet class and connects it to the 
 The user will need to authenticate their identity using the Celo Wallet SDK before they can interact with the Celo network via your mobile application. This can be accomplished with the following code:
 
 ```javascript
-const auth = await celoWallet.authenticate();
-console.log(auth);
+const auth = await celoWallet.authenticate(); // Call the authenticate() method on the celoWallet instance to authenticate with the Celo network and obtain an authentication object
+
+console.log(auth); // Output the authentication object to the console
+
 ```
 
 This code opens the Celo Wallet app and prompts the user to authenticate their identity. Once the user has authenticated, the code logs an authentication object to the console.
@@ -183,17 +196,19 @@ This code opens the Celo Wallet app and prompts the user to authenticate their i
 You can add a form or button that triggers the following code to allow users to send transactions on the Celo network via your mobile application:
 
 ```javascript
-const recipientAddress = '<recipient address>';
-const amountToSend = 1; // cGLD
+const recipientAddress = '<recipient address>'; // Set the recipient's address to send the transaction to
+const amountToSend = 1; // Set the amount to send in cGLD (Celo Gold) currency
 
 const txObject = {
-  from: celoWallet.address,
-  to: recipientAddress,
-  value: celoWallet.web3.utils.toWei(amountToSend.toString(), 'ether'),
+  from: celoWallet.address, // Set the 'from' address for the transaction as the address of the celoWallet instance
+  to: recipientAddress, // Set the 'to' address for the transaction as the recipient's address
+  value: celoWallet.web3.utils.toWei(amountToSend.toString(), 'ether'), // Convert the amount to send from cGLD to wei using the 'toWei()' method from the web3 object available in celoWallet instance
 };
 
-const txHash = await celoWallet.sendTransaction(txObject);
-console.log(txHash);
+const txHash = await celoWallet.sendTransaction(txObject); // Call the sendTransaction() method on the celoWallet instance, passing the txObject as an argument, to send the transaction and obtain a transaction hash
+
+console.log(txHash); // Output the transaction hash to the console
+
 ```
 
 This code sends 1 cGLD to the specified recipient address and logs the transaction hash to the console.
@@ -203,8 +218,10 @@ This code sends 1 cGLD to the specified recipient address and logs the transacti
 You can add a button or menu item that triggers the following code to allow users to check the balance of their Celo account through your mobile application:
 
 ```javascript
-const balance = await celoWallet.getBalance();
-console.log(balance);
+const balance = await celoWallet.getBalance(); // Call the getBalance() method on the celoWallet instance to retrieve the balance of the associated Celo address
+
+console.log(balance); // Output the retrieved balance to the console
+
 ```
 
 This code retrieves the balance of the user's Celo account and logs it to the console.
@@ -214,19 +231,22 @@ This code retrieves the balance of the user's Celo account and logs it to the co
 To allow the user to interact with a smart contract on the Celo network via your mobile application, include a form or button that executes the following code:
 
 ```javascript
-import { ContractKit } from '@celo/contractkit';
+import { ContractKit } from '@celo/contractkit'; // Import the ContractKit module from the '@celo/contractkit' library
 
-const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org');
-const contractAddress = '<contract address>';
-const contract = new kit.web3.eth.Contract(contractABI, contractAddress);
+const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org'); // Create a new ContractKit instance with the specified Alfajores testnet URL
 
-const result = await contract.methods.<method name>(<arguments>).call();
-console.log(result);
+const contractAddress = '<contract address>'; // Replace with the actual address of the smart contract being interacted with
+const contract = new kit.web3.eth.Contract(contractABI, contractAddress); // Create a new web3.eth.Contract instance for the smart contract, passing the ABI and contract address as arguments
+
+const result = await contract.methods.<method name>(<arguments>).call(); // Call the specified method on the smart contract using the 'methods' property of the contract instance, passing any required arguments
+
+console.log(result); // Output the result of the method call to the console
+
 ```
 
 This code creates a new instance of the ContractKit class and retrieves data from the specified smart contract using the contract's ABI and address.
 
-Congratulations you have successfully integrated celo to your mobile app using the `Celo SDK`. You can now interact with you app perfecttly.  
+Congratulations!! You have successfully integrated celo to your mobile app using the `Celo SDK`. Now, you can interact with your app perfectly.  
 
 # Conclusion:
 
