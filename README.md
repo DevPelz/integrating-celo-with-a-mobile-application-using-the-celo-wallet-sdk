@@ -225,7 +225,7 @@ console.log(result);
 
 This code creates a new instance of the ContractKit class and retrieves data from the specified smart contract using the contract's ABI and address.
 
-Congratulations you have successfully integrated celo to your mobile app using the `Celo SDK`. You can now interact with you app perfecttly.  
+Congratulations!! You have successfully integrated celo to your mobile app using the `Celo SDK`. Now, you can interact with your app perfectly.   
 
 # Conclusion
 
