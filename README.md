@@ -4,24 +4,25 @@
 - [Integrating Celo with a mobile application using the Celo Wallet SDK](#integrating-celo-with-a-mobile-application-using-the-celo-wallet-sdk)
   - [Table of Content](#table-of-content)
   - [Introduction](#introduction)
+  - [Prerequisite](#prerequisite)
   - [Requirements](#requirements)
-  - [What is CELO?](#what-is-celo)
-  - [What is Celo SDK?](#what-is-celo-sdk)
-- [Part 1: Setting up the Celo Wallet SDK](#part-1-setting-up-the-celo-wallet-sdk)
+  - [What Is Celo?](#what-is-celo)
+  - [What Is the Celo SDK?](#what-is-the-celo-sdk)
+  - [Part 1: Setting up the Celo Wallet SDK](#part-1-setting-up-the-celo-wallet-sdk)
     - [Step 1: Install the Celo Wallet SDK](#step-1-install-the-celo-wallet-sdk)
     - [Step 2: Connect to the Celo Network](#step-2-connect-to-the-celo-network)
     - [Step 3: Authenticate the User](#step-3-authenticate-the-user)
-- [Part 2: Interacting with the Celo Network](#part-2-interacting-with-the-celo-network)
+  - [Part 2: Interacting With the Celo Network](#part-2-interacting-with-the-celo-network)
     - [Sending Transactions](#sending-transactions)
     - [Checking Account Balances](#checking-account-balances)
     - [Reading Smart Contract Data](#reading-smart-contract-data)
-- [Part 3: Implementing Celo Functionality in Your Mobile Application](#part-3-implementing-celo-functionality-in-your-mobile-application)
+  - [Part 3: Implementing Celo Functionality in Your Mobile Application](#part-3-implementing-celo-functionality-in-your-mobile-application)
     - [Step 1: Integrate the Celo Wallet SDK into Your Mobile Application](#step-1-integrate-the-celo-wallet-sdk-into-your-mobile-application)
     - [Step 2: Add Authentication Functionality](#step-2-add-authentication-functionality)
     - [Step 3: Add Transaction Sending Functionality](#step-3-add-transaction-sending-functionality)
     - [Step 4: Add Account Balance Checking Functionality](#step-4-add-account-balance-checking-functionality)
     - [Step 5: Add Smart Contract Interaction Functionality](#step-5-add-smart-contract-interaction-functionality)
-- [Conclusion](#conclusion)
+  - [Conclusion](#conclusion)
 
 
 ## Introduction
@@ -29,6 +30,8 @@ In this article, you will learn about the following concepts:
 - The Celo blockchain
 - The Celo wallet
 - How to create and integrate Celo to a conntract using the Celo Wallet SDK.
+
+## Prerequisite
 
 ## Requirements
 Here are some of the basic system requirements for you to integrate Celo with a mobile application using the Celo Wallet SDK:
@@ -40,7 +43,7 @@ Here are some of the basic system requirements for you to integrate Celo with a 
 Alright, lets get started.
 
 
-## What is CELO?
+## What Is Celo?
 
 **[Celo](https://docs.celo.org/general)** is a decentralized, open-source blockchain network that aims to provide people all over the world with accessible and secure financial tools. Because it is based on the Ethereum Virtual Machine (EVM) and is compatible with the Ethereum network, developers can use the same smart contract code on both Celo and Ethereum.
 
@@ -53,7 +56,7 @@ The **[Celo](https://docs.celo.org/general)** blockchain's primary goal is to cr
 In summary, the Celo blockchain is intended to provide people all over the world with accessible, secure, and transparent financial services. Its use of mobile-first development, a stablecoin, and a unique identity system all help it to achieve its goal of creating a more inclusive financial system. Its compatibility with the Ethereum network, use of proof-of-stake consensus, and emphasis on security and transparency make it an appealing option for both developers and users.
 
 
-## What is Celo SDK?
+## What Is the Celo SDK?
 
 The **[Celo SDK](https://celo-sdk-docs.readthedocs.io/en/latest/)** (Software Development Kit) is a collection of developer tools designed to assist developers in creating and integrating financial applications on the Celo blockchain. The SDK includes a comprehensive set of tools and resources that enable developers to build decentralized applications (dApps) that interact with the Celo blockchain and give users access to a variety of financial services. The Celo SDK is intended to make it simple for developers to create and deploy smart contracts on the Celo blockchain. The SDK comes with a collection of pre-built contracts that can be used as templates or customized to fit specific use cases. Stablecoins, lending protocols, and decentralized exchanges can all be created using these contracts.
 
@@ -69,7 +72,7 @@ Putting it all together, the **[Celo SDK](https://celo-sdk-docs.readthedocs.io/e
 
 Now that you've learned what **[Celo](https://docs.celo.org/general)**  and **[Celo SDK](https://celo-sdk-docs.readthedocs.io/en/latest/)**  is all about here's a tutorial on how to integrate the Celo with a mobile application using the **[Celo Wallet SDK](https://docs.celo.org/wallet)**
 
-# Part 1: Setting up the Celo Wallet SDK
+## Part 1: Setting up the Celo Wallet SDK
   
   The **[Celo Wallet SDK](https://docs.celo.org/wallet)** is a set of tools for easily integrating the Celo blockchain into your mobile application. In this section, we'll go over how to install the Celo Wallet SDK and connect it to your mobile application.
 
@@ -103,7 +106,7 @@ console.log(auth);
 ```
 This code opens the Celo Wallet app and prompts the user to authenticate their identity. Once the user has authenticated, the code logs an authentication object to the console.
 
-# Part 2: Interacting with the Celo Network
+## Part 2: Interacting With the Celo Network
 
 After you've installed the Celo Wallet SDK and authenticated the user, you can begin interacting with the Celo network via your mobile application. In this section, we'll go over some examples of how to use the Celo Wallet SDK to send transactions, check account balances, and more.
 
@@ -152,7 +155,7 @@ console.log(result);
 ```
 This code creates a new instance of the ContractKit class and retrieves data from the specified smart contract using the contract's ABI and address.
 
-# Part 3: Implementing Celo Functionality in Your Mobile Application
+## Part 3: Implementing Celo Functionality in Your Mobile Application
 
 Now that you understand the fundamentals of the Celo Wallet SDK and how to interact with the Celo network, it's time to begin incorporating Celo functionality into your mobile application.
 
@@ -230,6 +233,6 @@ This code creates a new instance of the ContractKit class and retrieves data fro
 
 Congratulations!! You have successfully integrated celo to your mobile app using the `Celo SDK`. Now, you can interact with your app perfectly.   
 
-# Conclusion
+## Conclusion
 
 Using the **Celo Wallet SDK** to integrate Celo with a mobile application is a simple process that can add powerful functionality to your application. You will be able to set up the **Celo Wallet SDK**, authenticate users, send transactions, check account balances, and interact with smart contracts on the Celo network by following the steps outlined in this tutorial. You'll be well on your way to developing powerful Celo-powered mobile applications with these tools at your disposal.
