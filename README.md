@@ -221,13 +221,6 @@ In the `listenForIncomingTransactions` function, we specify the `address` that w
 
 We can utilize the Celo Wallet SDK to construct a mobile app that can communicate with the Celo blockchain now that we know how to interact with it using the ContractKit library. In this part, we'll walk through the processes required to create a simple mobile app capable of sending and receiving transactions on the Celo blockchain.
 
-- Prerequisites
-Before we begin developing the mobile app, we must ensure that the following are installed:
-
-- Node.js
-- NPM
-- Expo CLI
-
 - Creating a new Expo project:
 To create a new Expo project, run the following command in your terminal:
 
@@ -261,7 +254,7 @@ import { ContractKit } from '@celo/contractkit';
 import { Button, Input } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import LoginScreen from './screens/LoginScreen';
+import { LoginScreen } from './screens/LoginScreen.js';
 
 const Stack = createStackNavigator();
 const contractKit = new ContractKit();
@@ -667,9 +660,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
-import TransactionScreen from './screens/TransactionScreen';
+import { HomeScreen } from './screens/HomeScreen.js';
+import { LoginScreen } from './screens/LoginScreen.js';
+import {TransactionScreen} from './screens/TransactionScreen.js';
 
 const Stack = createStackNavigator();
 
