@@ -254,7 +254,7 @@ import { ContractKit } from '@celo/contractkit';
 import { Button, Input } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { LoginScreen } from './screens/LoginScreen.js';
+import  LoginScreen  from './screens/LoginScreen';
 
 const Stack = createStackNavigator();
 const contractKit = new ContractKit();
@@ -660,9 +660,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { HomeScreen } from './screens/HomeScreen.js';
-import { LoginScreen } from './screens/LoginScreen.js';
-import {TransactionScreen} from './screens/TransactionScreen.js';
+import  HomeScreen  from './screens/HomeScreen';
+import  LoginScreen  from './screens/LoginScreen';
+import TransactionScreen from './screens/TransactionScreen';
 
 const Stack = createStackNavigator();
 
